@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="<?= base_url() ?>/vendor/lightGallery/css/lightgallery-bundle.min.css">
+<script src="<?= base_url() ?>/vendor/lightGallery/lightgallery.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/lightgallery.umd.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/autoplay/lg-autoplay.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/comment/lg-comment.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/hash/lg-hash.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/pager/lg-pager.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/rotate/lg-rotate.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/share/lg-share.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/video/lg-video.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/mediumZoom/lg-medium-zoom.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"></script>
+<script src="<?= base_url() ?>/vendor/lightGallery/plugins/vimeoThumbnail/lg-vimeo-thumbnail.min.js"></script>
+
+
+####    inisialisasi
+
+let lightGalleryClass = document.getElementsByClassName('lightgallery');
+for (let i = 0; i < lightGalleryClass.length; i++) {
+    lightGallery(lightGalleryClass[i], {
+        plugins: [lgZoom, lgThumbnail, lgAutoplay, lgFullscreen, lgShare, lgVideo, lgPager, lgRotate, lgComment, lgVimeoThumbnail],
+        selector: '.item',
+        thumbnail: true,
+        autoplayControls: true,
+        fullScreen: true,
+        share: true,
+        rotate: true,
+        comment: true,
+        pager: true,
+        videoMaxWidth: '100%',
+        videojs: true,
+        vimeoThumbSize: 'thumbnail_medium',
+        youtubePlayerParams: {
+            modestbranding: 1,
+            showinfo: 0,
+            rel: 0,
+            controls: 0
+        },
+        vimeoPlayerParams: {
+            byline: 0,
+            portrait: 0,
+            color: 'A90707'
+        },
+    });
+}
+
+
+####    jika thumbnail tidak muncul di php
+
+$('.lightgallery').on('lgAfterOpen', function(event) {
+    // chek index class lightgallery yang terbuka
+    let index = $('.lightgallery').index(this);
+    let imgIndex = $('.lightgallery').eq(index).find('img');
+    // ambil src dari img
+    let src = [];
+    imgIndex.each(function(i) {
+        src.push($(this).attr('src'));
+    });
+
+    // masukkan src ke thumbnail ligtgallery
+    let lgItemId = $('.lg-show img[data-lg-item-id]');
+    lgItemId.each(function(i) {
+        $(this).attr('src', src[i]);
+    });
+
+    // masukkan src ke thumbnail ligtgallery hover
+    let lgItem = $('.lg-show img:not([data-lg-item-id])').not('.lg-image');
+    lgItem.each(function(i) {
+        $(this).attr('src', src[i]);
+    });
+});
+
+####    html
+
+<div class="col-lg-3 col-md-4 col-12 p-0 overflow-hidden portfolio__wrapper lightgallery">
+    <?php foreach ($img_decode as $img) : ?>
+        <img src="<?= base_url('/img/portfolio') . '/' . $img ?>" alt="" class="item">
+    <?php endforeach; ?>
+</div>

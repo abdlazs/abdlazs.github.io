@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/images/logo/apple-touch-icon.png" type="image/png">
+    <title>Koleksi | Multiple File Upload (All File)</title>
+
+    <script src="../../assets/plugin/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/template/app.css">
+    <link rel="stylesheet" href="../../assets/template/app-dark.css">
+    <link rel="stylesheet" href="../../assets/plugin/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="page-heading" style="min-height: 80vh;">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form id="form_multiple" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">Nama Project</label>
+                                            <input type="text" name="project" class="form-control" value="Coba Project">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Upload File</label>
+                                            <div id="img_multiple">
+                                                <!-- <div class="item filled">
+                                                    <input type="file" name="img[]" class="form-control" id="img">
+                                                    <img src="img/img (1).jpg">
+                                                    <div class="action">
+                                                        <i class="fa fas fa-trash-alt delete_btn"></i>
+                                                        <i class="fa fas fa-plus add_btn"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <input type="file" name="img[]" class="form-control" id="img">
+                                                    <img src="">
+                                                    <div class="action">
+                                                        <i class="fa fas fa-trash-alt delete_btn"></i>
+                                                        <i class="fa fas fa-plus add_btn"></i>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 text-end">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/template/sidebar.js"></script>
+    <script src="../../assets/template/bootstrap.js"></script>
+    <script src="../../assets/template/app.js"></script>
+    <script src="multipledocumentupload.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#img_multiple').customMyFunc({
+                maxFile: 6,
+                fileAllowed: "Documents",
+                sizePerFile: 5120,
+            });
+
+            $('#form_multiple').submit(function (e) {
+                e.preventDefault();
+
+                var data = new FormData();
+                let projectName = $('input[name="project"]').val();
+                let imgWithVal = $('.item.filled');
+                let img = [];
+
+                imgWithVal.each(function (i, value) {
+                    img.push($(value).find('input[type="file"]').prop('files')[0]);
+                });
+
+                data.append('project', projectName);
+                $.each(img, function (i, v) {
+                    data.append('img[]', v);
+                });
+
+                console.log(data);
+            });
+        })
+    </script>
+</body>
+
+</html>

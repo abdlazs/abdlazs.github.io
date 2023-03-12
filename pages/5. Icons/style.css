@@ -1,0 +1,63 @@
+#navbarInput::placeholder {
+    color: #435ebe;
+    font-size: 10pt;
+}
+
+.card-header {
+    position: sticky;
+    top: 0;
+}
+
+.iconslist {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.iconslist .icon {
+    height: 150px;
+    background-color: transparent;
+    border-radius: 0.25rem;
+    text-align: center;
+    color: #435ebe;
+    padding: 15px 0;
+    border: 1px solid #435ebe;
+    cursor: pointer;
+}
+
+.iconslist .icon i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.iconslist .label {
+    font-family: var(--bs-font-monospace);
+    display: inline-block;
+    /* display: none; */
+    width: 100%;
+    overflow: hidden;
+    padding: 0.25rem;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    color: #435ebe;
+}
+
+
+/*
+ Material Icons
+ */
+
+/* #material-icons .card-title {
+    padding: 5rem 0 1rem;
+}
+
+#material-icons .card-title.first {
+    padding-top: 1rem;
+}
+
+#material-icons .iconslist .icon {
+    color: #012a70a2;
+} */

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/images/logo/apple-touch-icon.png" type="image/png">
+    <title>Koleksi | LightGallery</title>
+
+    <script src="../../assets/plugin/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/template/app.css">
+    <link rel="stylesheet" href="../../assets/template/app-dark.css">
+    <link rel="stylesheet" href="../../assets/plugin/lightGallery/css/lightgallery-bundle.min.css">
+</head>
+
+<style>
+    .card-body ul {
+        list-style: none;
+        margin: 0 0 15px;
+        padding: 0;
+        /* border: 1px dashed rgba(0, 0, 0, 0.438); */
+    }
+
+    .card-body li.content {
+        width: 100%;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card-body li.content img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="page-heading" style="min-height: 80vh;">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul>
+                                        <h5 class="card-title text-center py-3">Basic LightGallery</h5>
+                                        <li class="content lightgalleryBasic">
+                                            <img src="img/img (1).png" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+                                            <img src="img/img (2).png">
+                                            <img src="img/img (3).png">
+                                            <img src="img/img (4).png">
+                                            <img src="img/img (5).png">
+                                            <img src="img/img (6).png">
+                                            <img src="img/img (7).png">
+                                        </li>
+                                        <li class="content lightgalleryBasic">
+                                            <img src="img/img (8).png" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+                                            <img src="img/img (9).png">
+                                            <img src="img/img (10).png">
+                                            <img src="img/img (11).png">
+                                            <img src="img/img (12).png">
+                                            <img src="img/img (13).png">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <h5 class="card-title text-center py-3">LightGallery Iframe</h5>
+                                        <li class="content">
+                                            <button class="btn btn-success btn-lg LightGalleryIframe" data-iframe="true" data-src="https://abdulazisahmad.my.id">
+                                                Website
+                                            </button>
+                                            <button class="btn btn-success btn-lg LightGalleryIframe" data-iframe="true" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.173621822111!2d110.2658808671695!3d-7.664474843945212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af4eef4457743%3A0xc95a6c4ab263dea0!2sAncol%20Bridge%20-%20Bligo!5e0!3m2!1sen!2sid!4v1678597072768!5m2!1sen!2sid">
+                                                Google map
+                                            </button>
+                                            <button class="btn btn-success btn-lg LightGalleryIframe" data-iframe="true" data-src="https://www.youtube.com/embed/gzCUq_VQ7Y8">
+                                                Youtube Video
+                                            </button>
+                                            <button class="btn btn-success btn-lg LightGalleryIframe" data-iframe="true" data-src="file:///D:/Github%20Project/6.%20LightGallery/resume.pdf">
+                                                Pdf
+                                            </button>
+                                            <button class="btn btn-success btn-lg LightGalleryIframe" data-iframe="true" data-src="file:///e:/film/Ketua%20BEM%20&%20His%20Secret/Ketua%20Bem%20and%20His%20Secret%20Wife%2002%20[480p]%20[anikor.my.id].mp4">
+                                                Local Video
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/template/sidebar.js"></script>
+    <script src="../../assets/template/bootstrap.js"></script>
+    <script src="../../assets/template/app.js"></script>
+
+    <script src="../../assets/plugin/lightGallery/lightgallery.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/lightgallery.umd.js"></script>
+
+    <script src="../../assets/plugin/lightGallery/plugins/autoplay/lg-autoplay.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/comment/lg-comment.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/hash/lg-hash.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/pager/lg-pager.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/rotate/lg-rotate.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/share/lg-share.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/video/lg-video.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/mediumZoom/lg-medium-zoom.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"></script>
+    <script src="../../assets/plugin/lightGallery/plugins/vimeoThumbnail/lg-vimeo-thumbnail.min.js"></script>
+
+    <!-- 
+        Basic LightGallery
+     -->
+    <script>
+        let lightGalleryBasic = document.getElementsByClassName("lightgalleryBasic");
+        for (let i = 0; i < lightGalleryBasic.length; i++) {
+            lightGallery(lightGalleryBasic[i], {
+                plugins: [
+                    lgZoom,
+                    lgThumbnail,
+                    lgAutoplay,
+                    lgFullscreen,
+                    lgShare,
+                    lgVideo,
+                    lgPager,
+                    lgRotate,
+                    lgComment,
+                    lgVimeoThumbnail,
+                ],
+                licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
+                selector: "img",
+                thumbnail: true,
+                animateThumb: true,
+                zoomFromOrigin: true,
+                allowMediaOverlap: true,
+                toggleThumb: true,
+                autoplayControls: true,
+                fullScreen: true,
+                share: true,
+                rotate: true,
+                comment: true,
+                pager: true,
+                videoMaxWidth: "100%",
+                videojs: true,
+                subHtmlSelectorRelative: true,
+            })
+        }
+
+
+        // Karena lightgallery tidak bisa menampilkan thumbnail dari img yang ada di dalam lightgallery
+        // maka kita harus membuat fungsi sendiri untuk menampilkan thumbnail dari img yang ada di dalam lightgallery 
+        $(".lightgalleryBasic").on("lgAfterOpen", function () {
+            // chek index class lightgallery yang terbuka
+            let index = $(".lightgalleryBasic").index(this);
+            let imgIndex = $(".lightgalleryBasic").eq(index).find("img");
+            // ambil src dari img
+            let src = [];
+            imgIndex.each(function (i) {
+                src.push($(this).attr("src"));
+            });
+
+            // masukkan src ke thumbnail ligtgallery
+            let lgItemId = $(".lg-show img[data-lg-item-id]");
+            lgItemId.each(function (i) {
+                $(this).attr("src", src[i]);
+            });
+
+            // masukkan src ke thumbnail ligtgallery hover
+            let lgItem = $(".lg-show img:not([data-lg-item-id])").not(".lg-image");
+            lgItem.each(function (i) {
+                $(this).attr("src", src[i]);
+            });
+        });
+    </script>
+
+    <!-- 
+        iFrame LightGallery
+    -->
+    <script>
+        let LightGalleryIframe = document.getElementsByClassName("LightGalleryIframe");
+        for (let i = 0; i < LightGalleryIframe.length; i++) {
+            lightGallery(LightGalleryIframe[i], {
+                selector: 'this',
+            })
+        }
+    </script>
+</body>
+
+</html>

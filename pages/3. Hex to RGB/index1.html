@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/images/logo/apple-touch-icon.png" type="image/png">
+    <title>Koleksi | RGB to Hex</title>
+
+    <script src="../../assets/plugin/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/template/app.css">
+    <link rel="stylesheet" href="../../assets/template/app-dark.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="page-heading" style="min-height: 80vh;">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row g-4 flex-row-reverse justify-content-center">
+                                        <div class="col-lg-5">
+                                            <label class="form-label">Color Preview</label>
+                                            <div class="w-100 border-2 rounded-2 preview" style="height: 200px;"></div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <form action="" id="form2">
+                                                <div class="row">
+
+                                                    <div class="col-12 form-label mt-3">Red Color</div>
+                                                    <div class="col-4 col-md-3">
+                                                        <input type="number" name="red" class="form-control shadow-none border-0" value="0" min="0" max="255">
+                                                    </div>
+                                                    <div class="col-8 col-md-9 my-auto">
+                                                        <input type="range" name="rangered" class="form-range shadow-none border-0 text-danger" min="0" max="255" value="0">
+                                                    </div>
+
+                                                    <div class="col-12 form-label mt-3">Green Color</div>
+                                                    <div class="col-4 col-md-3">
+                                                        <input type="number" name="green" class="form-control shadow-none border-0" value="0" min="0" max="255">
+                                                    </div>
+                                                    <div class="col-8 col-md-9 my-auto">
+                                                        <input type="range" name="rangegreen" class="form-range shadow-none border-0 text-danger" min="0" max="255" value="0">
+                                                    </div>
+
+                                                    <div class="col-12 form-label mt-3">Blue Color</div>
+                                                    <div class="col-4 col-md-3">
+                                                        <input type="number" name="blue" class="form-control shadow-none border-0" value="0" min="0" max="255">
+                                                    </div>
+                                                    <div class="col-8 col-md-9 my-auto">
+                                                        <input type="range" name="rangeblue" class="form-range shadow-none border-0 text-danger" min="0" max="255" value="0">
+                                                    </div>
+
+                                                    <div class="button-group text-end mb-3">
+                                                        <button type="submit" class="btn btn-info shadow-none text-white">Convert</button>
+                                                        <button type="reset" class="btn btn-secondary shadow-none">Reset</button>
+                                                    </div>
+
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label">RGB Color Code</label>
+                                                        <input type="text" name="rgb" class="form-control shadow-none border-0" readonly>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label">Hex Color Code</label>
+                                                        <input type="text" name="hex" class="form-control shadow-none border-0" readonly>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label">Hsl Color Code</label>
+                                                        <input type="text" name="hsl" class="form-control shadow-none border-0" readonly>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/template/sidebar.js"></script>
+    <script src="../../assets/template/bootstrap.js"></script>
+    <script src="../../assets/template/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            function randomColor() {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+
+                $('input[name="red"]').val(r);
+                $('input[name="green"]').val(g);
+                $('input[name="blue"]').val(b);
+                $('input[name="rangered"]').val(r);
+                $('input[name="rangegreen"]').val(g);
+                $('input[name="rangeblue"]').val(b);
+
+                $('.preview').css('background-color', `rgb(${r}, ${g}, ${b})`);
+
+                $('input[name="rgb"]').val(`rgb(${r}, ${g}, ${b})`);
+                $('input[name="hex"]').val(`#${r.toString(16)}${g.toString(16)}${b.toString(16)}`);
+                $('input[name="hsl"]').val(`hsl(${r}, ${g}, ${b})`);
+            };
+            randomColor();
+
+            function resetFunc() {
+                $('#form1 input[name="red"]').val('0');
+                $('#form1 input[name="green"]').val('0');
+                $('#form1 input[name="blue"]').val('0');
+                $('.preview').css('background-color', 'rgb(0, 0, 0)');
+            }
+            $('#form2').on('reset', resetFunc)
+
+            const rgbtohex = function () {
+                $('#form2 input[name="rangered"]').on('input', function () {
+                    $('#form2 input[name="red"]').val($(this).val())
+                    $('.preview').css('background-color', `rgb(${$(this).val()}, ${$('#form2 input[name="green"]').val()}, ${$('#form2 input[name="blue"]').val()})`);
+                })
+                $('#form2 input[name="rangegreen"]').on('input', function () {
+                    $('#form2 input[name="green"]').val($(this).val())
+                    $('.preview').css('background-color', `rgb(${$('#form2 input[name="red"]').val()}, ${$(this).val()}, ${$('#form2 input[name="blue"]').val()})`);
+                })
+                $('#form2 input[name="rangeblue"]').on('input', function () {
+                    $('#form2 input[name="blue"]').val($(this).val())
+                    $('.preview').css('background-color', `rgb(${$('#form2 input[name="red"]').val()}, ${$('#form2 input[name="green"]').val()}, ${$(this).val()})`);
+                })
+
+                $('#form2 input[name="red"]').on('input', function () {
+                    if ($(this).val() > 255) {
+                        $(this).val(255);
+                    } else if ($(this).val() < 0) {
+                        $(this).val(0);
+                    }
+                    $('#form2 input[name="rangered"]').val($(this).val())
+                })
+
+                $('#form2 input[name="green"]').on('input', function () {
+                    if ($(this).val() > 255) {
+                        $(this).val(255);
+                    } else if ($(this).val() < 0) {
+                        $(this).val(0);
+                    }
+                    $('#form2 input[name="rangegreen"]').val($(this).val())
+                })
+
+                $('#form2 input[name="blue"]').on('input', function () {
+                    if ($(this).val() > 255) {
+                        $(this).val(255);
+                    } else if ($(this).val() < 0) {
+                        $(this).val(0);
+                    }
+                    $('#form2 input[name="rangeblue"]').val($(this).val())
+                })
+
+                $('#form2 input[name="red"], #form2 input[name="green"], #form2 input[name="blue"]').on('input', function () {
+                    let r = $('#form2 input[name="red"]').val();
+                    let g = $('#form2 input[name="green"]').val();
+                    let b = $('#form2 input[name="blue"]').val();
+                    $('.preview').css('background-color', `rgb(${r}, ${g}, ${b})`);
+                })
+
+                $('#form2').on('submit', function (e) {
+                    e.preventDefault();
+                    let r = $('#form2 input[name="red"]').val();
+                    let g = $('#form2 input[name="green"]').val();
+                    let b = $('#form2 input[name="blue"]').val();
+                    $('#form2 input[name="rgb"]').val(`rgb(${r}, ${g}, ${b})`);
+
+                    // konvert rgb to hex color
+                    let hex = ((1 << 24) + (parseInt(r) << 16) + (parseInt(g) << 8) + parseInt(b)).toString(16).slice(1);
+                    $('#form2 input[name="hex"]').val("#" + hex);
+
+                    // konvert rgb to hsl color
+                    r /= 255, g /= 255, b /= 255;
+                    let max = Math.max(r, g, b), min = Math.min(r, g, b);
+                    let h, s, l = (max + min) / 2;
+
+                    if (max == min) {
+                        h = s = 0; // achromatic
+                    } else {
+                        let d = max - min;
+                        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                        switch (max) {
+                            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                            case g: h = (b - r) / d + 2; break;
+                            case b: h = (r - g) / d + 4; break;
+                        }
+                        h /= 6;
+                    }
+
+                    h = Math.round(h * 360);
+                    s = Math.round(s * 100);
+                    l = Math.round(l * 100);
+
+                    $('#form2 input[name="hsl"]').val(`hsl(${h}, ${s}, ${l})`);
+                })
+            }();
+        })
+    </script>
+</body>
+
+</html>

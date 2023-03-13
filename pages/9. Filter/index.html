@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/images/logo/apple-touch-icon.png" type="image/png">
+    <title>Koleksi | Filter</title>
+
+    <script src="../../assets/plugin/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/template/app.css">
+    <link rel="stylesheet" href="../../assets/template/app-dark.css">
+</head>
+<style>
+    /* firefox */
+    body.theme-dark .form-range::-moz-range-progress {
+        background-color: #435ebe;
+        height: 0.5em;
+    }
+
+    body.theme-dark .form-range::-moz-range-track {
+        background-color: #dee2e6;
+        height: 0.5em;
+    }
+
+    body.theme-dark .form-range::-moz-range-thumb {
+        border: 0.5px solid #dee2e6;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="page-heading" style="min-height: 80vh;">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row gy-3 gy-md-0 flex-row-reverse">
+                                        <div class="col-12 col-md-6">
+                                            <h4>Filter Option</h4>
+                                            <div class="grayscale mb-4 mt-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Grayscale</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="grayscale" class="form-range shadow-none border-0 text-danger" min="0" max="100" value="0">
+                                            </div>
+                                            <div class="sepia mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Sepia</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="sepia" class="form-range shadow-none border-0 text-danger" min="0" max="100" value="0">
+                                            </div>
+                                            <div class="blur mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Blur</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>px</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="blur" class="form-range shadow-none border-0 text-danger" min="0" max="10" value="0">
+                                            </div>
+                                            <div class="brightness mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Brightness</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="brightness" class="form-range shadow-none border-0 text-danger" min="0" max="200" value="0">
+                                            </div>
+                                            <div class="hue-rotate mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Hue Rotate</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>&#176;</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="hue-rotate" class="form-range shadow-none border-0 text-danger" min="0" max="360" value="0">
+                                            </div>
+                                            <div class="saturate mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Saturate</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="saturate" class="form-range shadow-none border-0 text-danger" min="0" max="1000" value="0">
+                                            </div>
+                                            <div class="opacity mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Opacity</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="opacity" class="form-range shadow-none border-0 text-danger" min="0" max="100" value="0">
+                                            </div>
+                                            <div class="contrast mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Contrast</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="contrast" class="form-range shadow-none border-0 text-danger" min="0" max="1000" value="0">
+                                            </div>
+                                            <div class="invert mb-4">
+                                                <div class="d-flex justify-content-between">
+                                                    <label>Invert</label>
+                                                    <div>
+                                                        <label class="label-value"></label>
+                                                        <span>%</span>
+                                                    </div>
+                                                </div>
+                                                <input type="range" name="invert" class="form-range shadow-none border-0 text-danger" min="0" max="100" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="position-sticky" style="top: 1rem;">
+                                                <h4>Image Preview</h4>
+                                                <img src="img.jpg" class="w-100 mt-3 img-preview">
+                                                <div class="my-3">
+                                                    <label class="form-label">Css Code</label>
+                                                    <textarea class="form-control" name="result" rows="5"></textarea>
+                                                </div>
+                                                <div class="text-end">
+                                                    <button class="btn btn-primary btn-copy">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/template/sidebar.js"></script>
+    <script src="../../assets/template/bootstrap.js"></script>
+    <script src="../../assets/template/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const grayscale = $('.grayscale');
+            const sepia = $('.sepia');
+            const blur = $('.blur');
+            const brightness = $('.brightness');
+            const hueRotate = $('.hue-rotate');
+            const saturate = $('.saturate');
+            const opacity = $('.opacity');
+            const contrast = $('.contrast');
+            const invert = $('.invert');
+            const result = $('textarea[name=result]');
+            const imgPreview = $('.img-preview');
+
+            function getCssCode() {
+                let cssCode = '';
+                if (grayscale.find('input').val() != 0) {
+                    cssCode += `grayscale(${grayscale.find('input').val()}%) `;
+                }
+                if (sepia.find('input').val() != 0) {
+                    cssCode += `sepia(${sepia.find('input').val()}%) `;
+                }
+                if (blur.find('input').val() != 0) {
+                    cssCode += `blur(${blur.find('input').val()}px) `;
+                }
+                if (brightness.find('input').val() != 100) {
+                    cssCode += `brightness(${brightness.find('input').val()}%) `;
+                }
+                if (hueRotate.find('input').val() != 0) {
+                    cssCode += `hue-rotate(${hueRotate.find('input').val()}deg) `;
+                }
+                if (saturate.find('input').val() != 100) {
+                    cssCode += `saturate(${saturate.find('input').val()}%) `;
+                }
+                if (opacity.find('input').val() != 100) {
+                    cssCode += `opacity(${opacity.find('input').val()}%) `;
+                }
+                if (contrast.find('input').val() != 100) {
+                    cssCode += `contrast(${contrast.find('input').val()}%) `;
+                }
+                if (invert.find('input').val() != 0) {
+                    cssCode += `invert(${invert.find('input').val()}%) `;
+                }
+
+                imgPreview.css('filter', cssCode);
+                if (cssCode != '') {
+                    result.val(`filter: ${cssCode};\n-webkit-filter: ${cssCode};\n-moz-filter: ${cssCode};\n-o-filter: ${cssCode};\n-ms-filter: ${cssCode};`);
+                } else {
+                    result.val('');
+                }
+            }
+
+            function firstLoad() {
+                grayscale.find('.label-value').html('0');
+                grayscale.find('input').val(0);
+                sepia.find('.label-value').html('0');
+                sepia.find('input').val(0);
+                blur.find('.label-value').html('0');
+                blur.find('input').val(0);
+                brightness.find('.label-value').html('100');
+                brightness.find('input').val(100);
+                hueRotate.find('.label-value').html('0');
+                hueRotate.find('input').val(0);
+                saturate.find('.label-value').html('100');
+                saturate.find('input').val(100);
+                opacity.find('.label-value').html('100');
+                opacity.find('input').val(100);
+                contrast.find('.label-value').html('100');
+                contrast.find('input').val(100);
+                invert.find('.label-value').html('0');
+                invert.find('input').val(0);
+
+                getCssCode();
+            }
+            firstLoad();
+
+            $('input[type=range]').on('input', function () {
+                $(this).parent().find('.label-value').html($(this).val());
+                getCssCode();
+            })
+
+            $('.btn-copy').on('click', function () {
+                result.select();
+                document.execCommand('copy');
+                alert('Copied');
+            })
+        })
+    </script>
+</body>
+
+</html>

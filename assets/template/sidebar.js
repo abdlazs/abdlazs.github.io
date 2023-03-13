@@ -117,6 +117,10 @@
           namasubmenu: 'RGB to Hex',
           location: indexx + 'pages/3. Hex to RGB/index1.html',
         },
+        {
+          namasubmenu: 'Filter',
+          location: indexx + 'pages/9. Filter/index.html',
+        },
       ],
     },
     {

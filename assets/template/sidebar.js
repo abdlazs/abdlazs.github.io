@@ -130,6 +130,14 @@
           namasubmenu: 'Button Hover',
           location: indexx + 'pages/2. Button Hover/index.html',
         },
+        {
+          namasubmenu: 'Animation',
+          location: indexx + 'pages/10. Animation/index.html',
+        },
+        {
+          namasubmenu: 'Rubberbrand',
+          location: indexx + 'pages/11. Rubberbrand/index.html',
+        },
       ],
     },
     {

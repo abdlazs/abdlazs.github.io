@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/images/logo/apple-touch-icon.png" type="image/png">
+    <title>Koleksi | Rubberbrand</title>
+
+    <script src="../../assets/plugin/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/template/app.css">
+    <link rel="stylesheet" href="../../assets/template/app-dark.css">
+</head>
+<style>
+    @keyframes rubberbrand {
+        from {
+            transform: scale3d(1, 1, 1);
+        }
+
+        30% {
+            transform: scale3d(1.25, 0.75, 1);
+        }
+
+        40% {
+            transform: scale3d(0.75, 1.25, 1);
+        }
+
+        50% {
+            transform: scale3d(1.15, 0.85, 1);
+        }
+
+        65% {
+            transform: scale3d(0.95, 1.05, 1);
+        }
+
+        75% {
+            transform: scale3d(1.05, 0.95, 1);
+        }
+
+        to {
+            transform: scale3d(1, 1, 1);
+        }
+    }
+
+    .rubberbrand span {
+        font-size: 48px;
+        font-weight: 700;
+        margin-right: 5px;
+    }
+
+    .rubberbrand {
+        padding: 5rem 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .rubberbrand span:hover {
+        animation: rubberbrand 0.5s ease;
+    }
+
+    @media screen and (max-width: 991px) {
+        .rubberbrand span {
+            font-size: 36px;
+            font-weight: 700;
+            margin-right: 2px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .rubberbrand span {
+            font-size: 28px;
+            font-weight: 700;
+            margin-right: 2px;
+        }
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="page-heading" style="min-height: 80vh;">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="rubberbrand">
+                                        <span>A</span>
+                                        <span>B</span>
+                                        <span>D</span>
+                                        <span>U</span>
+                                        <span>L</span>
+                                        <span>&nbsp;</span>
+                                        <span>A</span>
+                                        <span>Z</span>
+                                        <span>I</span>
+                                        <span>S</span>
+                                        <span>&nbsp;</span>
+                                        <span>A</span>
+                                        <span>H</span>
+                                        <span>M</span>
+                                        <span>A</span>
+                                        <span>D</span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/template/sidebar.js"></script>
+    <script src="../../assets/template/bootstrap.js"></script>
+    <script src="../../assets/template/app.js"></script>
+
+</body>
+
+</html>

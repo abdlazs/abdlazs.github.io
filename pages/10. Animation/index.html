@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/images/logo/apple-touch-icon.png" type="image/png">
+    <title>Koleksi | Animation</title>
+
+    <script src="../../assets/plugin/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/template/app.css">
+    <link rel="stylesheet" href="../../assets/template/app-dark.css">
+</head>
+<style>
+    .wrap {
+        list-style: none;
+        padding: 0 !important;
+        margin: 0;
+    }
+
+    .wrap li {
+        border-bottom: 5px solid #f1f1f1;
+        padding-top: 1rem;
+        position: relative;
+        width: calc(50rem + 50px);
+        margin: 0 auto;
+    }
+
+    .wrap li img {
+        margin-bottom: -10px;
+        width: 50px;
+    }
+
+    .wrap li span {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .ease img {
+        animation: animation 3s ease infinite;
+    }
+
+    .ease-in img {
+        animation: animation 3s ease-in infinite;
+    }
+
+    .ease-out img {
+        animation: animation 3s ease-out infinite;
+    }
+
+    .ease-in-out img {
+        animation: animation 3s ease-in-out infinite;
+    }
+
+    .alternate img {
+        animation: animation 3s alternate infinite;
+    }
+
+    .both img {
+        animation: animation 3s both infinite;
+    }
+
+
+    @keyframes animation {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(50rem);
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .wrap li {
+            width: 650px;
+        }
+
+        @keyframes animation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(600px);
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .wrap li {
+            width: 300px;
+        }
+
+        @keyframes animation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(250px);
+            }
+        }
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="main">
+            <div class="page-heading" style="min-height: 80vh;">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="wrap">
+                                        <li class="ease">
+                                            <span>Ease</span>
+                                            <img src="https://img.icons8.com/color/48/null/car--v1.png" />
+                                        </li>
+                                        <li class="ease-in">
+                                            <img src="https://img.icons8.com/color/48/null/car--v1.png" />
+                                            <span>Ease in</span>
+                                        </li>
+                                        <li class="ease-out">
+                                            <img src="https://img.icons8.com/color/48/null/car--v1.png" />
+                                            <span>Ease out</span>
+                                        </li>
+                                        <li class="ease-in-out">
+                                            <img src="https://img.icons8.com/color/48/null/car--v1.png" />
+                                            <span>Ease in out</span>
+                                        </li>
+                                        <li class="alternate">
+                                            <img src="https://img.icons8.com/color/48/null/car--v1.png" />
+                                            <span>Alternate</span>
+                                        </li>
+                                        <li class="both">
+                                            <img src="https://img.icons8.com/color/48/null/car--v1.png" />
+                                            <span>Both</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/template/sidebar.js"></script>
+    <script src="../../assets/template/bootstrap.js"></script>
+    <script src="../../assets/template/app.js"></script>
+
+</body>
+
+</html>
